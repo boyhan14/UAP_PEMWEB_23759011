@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Menentukan karakter encoding yang digunakan adalah UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Agar tampilan halaman responsif pada perangkat mobile -->
+    <title>Program Penjualan Motor</title> <!-- Menentukan judul halaman -->
+</head>
+<body>
+    <h1>Program Penjualan Motor</h1> <!-- Judul besar di halaman -->
+    <form> <!-- Membuat form untuk input data -->
+        <h2>Pilih Merk Motor</h2> <!-- Subjudul untuk bagian merk motor -->
+        <select name="merk"> <!-- Dropdown untuk memilih merk motor -->
+            <option value="honda">Honda</option> <!-- Pilihan Honada -->
+            <option value="yamaha">Yamaha</option> <!-- Pilihan Yamaha -->
+            <option value="suzuki">Suzuki</option> <!-- Pilihan Suzuki -->
+        </select>
+        <br>
+        <h2>Pilih Aksesoris</h2> <!-- Subjudul untuk bagian aksesoris -->
+        <input type="checkbox" name="aksesoris[]" value="helm"> Helm (Rp. 250.000) <br> <!-- Checkbox untuk aksesoris Helm -->
+        <input type="checkbox" name="aksesoris[]" value="jaket"> Jaket (Rp. 300.000) <br> <!-- Checkbox untuk aksesoris Jaket -->
+        <input type="checkbox" name="aksesoris[]" value="velg"> Velg Racing (Rp. 450.000) <br> <!-- Checkbox untuk aksesoris Velg Racing -->
+        <br>
+        <h2>Cara Pembayaran</h2> <!-- Subjudul untuk bagian cara pembayaran -->
+        <input type="radio" name="pembayaran" value="tunai"> Tunai <br> <!-- Radio button untuk pembayaran tunai -->
+        <input type="radio" name="pembayaran" value="kredit"> Kredit <br> <!-- Radio button untuk pembayaran kredit -->
+        <br>
+        <button type="submit">Proses</button> <!-- Tombol untuk mengirim data form -->
+        <button type="reset">Reset</button> <!-- Tombol untuk mereset semua input dalam form -->
+    </form>
+</body>
+</html>

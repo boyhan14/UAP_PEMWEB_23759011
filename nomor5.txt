@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Program Penjualan Barang Elektronik</title>
+    <script type="text/javascript">
+        function calculateTotal() {
+            let harga = parseFloat(document.getElementById('harga').value); // Mengambil nilai harga dan mengubahnya menjadi angka desimal
+            let jumlah = parseInt(document.getElementById('jumlah').value); // Mengambil nilai jumlah dan mengubahnya menjadi angka bulat
+            let total = harga * jumlah; // Menghitung total harga sebelum aksesoris dan pajak
+
+            // Mengecek apakah aksesoris USB dipilih, jika ya, tambahkan 50000 ke total
+            if (document.getElementById('usb').checked) {
+                total += 50000;
+            }
+            // Mengecek apakah aksesoris Memory dipilih, jika ya, tambahkan 120000 ke total
+            if (document.getElementById('memory').checked) {
+                total += 120000;
+            }
+            // Mengecek apakah aksesoris Speaker dipilih, jika ya, tambahkan 40000 ke total
+            if (document.getElementById('speaker').checked) {
+                total += 40000;
+            }
+
+            let pajak = total * 0.10; // Menghitung pajak sebesar 10% dari total
+            let bayar = total + pajak; // Menghitung jumlah akhir yang harus dibayar (total + pajak)
+
+            // Menampilkan hasil perhitungan pada input read-only
+            document.getElementById('total').value = total;
+            document.getElementById('pajak').value = pajak;
+            document.getElementById('bayar').value = bayar;
+        }
+
+        function resetForm() {
+            document.getElementById('salesForm').reset(); // Mengosongkan semua input pada form
+            document.getElementById('total').value = ''; // Mengosongkan input total
+            document.getElementById('pajak').value = ''; // Mengosongkan input pajak
+            document.getElementById('bayar').value = ''; // Mengosongkan input bayar
+        }
+    </script>
+</head>
+<body>
+    <h1 align="center">PROGRAM PENJUALAN BARANG ELEKTRONIK</h1>
+    <hr color="black">
+    <form id="salesForm" align="center">
+        Nama Barang: <input type="text" size="10" id="namaBarang"><br> <!-- Input untuk nama barang -->
+        Harga: <input type="text" size="8" id="harga"><br> <!-- Input untuk harga barang -->
+        Jumlah: <input type="text" size="8" id="jumlah"><br> <!-- Input untuk jumlah barang -->
+        Aksesoris:
+        <input type="checkbox" id="usb"> USB (50,000)<br> <!-- Checkbox untuk aksesoris USB -->
+        <input type="checkbox" id="memory"> Memory (120,000)<br> <!-- Checkbox untuk aksesoris Memory -->
+        <input type="checkbox" id="speaker"> Speaker (40,000)<br> <!-- Checkbox untuk aksesoris Speaker -->
+        Total: <input type="text" id="total" readonly><br> <!-- Input read-only untuk menampilkan total harga -->
+        Pajak 10%: <input type="text" id="pajak" readonly><br> <!-- Input read-only untuk menampilkan pajak -->
+        Bayar: <input type="text" id="bayar" readonly><br> <!-- Input read-only untuk menampilkan jumlah akhir yang harus dibayar -->
+        <hr color="black">
+        <button type="button" onclick="calculateTotal()">Proses</button> <!-- Tombol untuk memproses perhitungan -->
+        <button type="button" onclick="resetForm()">Reset</button> <!-- Tombol untuk mengosongkan form -->
+    </form>
+</body>
+</html>
